@@ -107,11 +107,6 @@ namespace gptgame
             // Acceptance Criteria 1: Initiate combat
             Console.WriteLine($"You have encountered a {randomEnemy}!");
 
-        }
-        //need to redo this section, something aint right.
-        public static void EnemyEncounter()
-        {
-            
             int enemyHealth = 10;
             int playerHealth = enemyHealth + 2;
 
@@ -126,7 +121,7 @@ namespace gptgame
                 // Player turn
                 if ( action.ToLower() == "attack" )
                 {
-                    Console.WriteLine($"You attacked the {SelectRandomEnemy}");
+                    Console.WriteLine($"You attacked the {randomEnemy}");
                     enemyHealth -= damage;
                 }
                 else if ( action.ToLower() == "heal" )
@@ -147,7 +142,7 @@ namespace gptgame
                 }
 
                 // Enemy turn
-                Console.WriteLine($"The {Player.chosenEnemy} attacks you!");
+                Console.WriteLine($"The {randomEnemy} attacks you!");
                 // Implement player damage logic here
                 Random playerAttack = new Random();
                 int playerDamage = playerAttack.Next(5);
@@ -159,8 +154,9 @@ namespace gptgame
                     $"Player Health: {playerHealth}");
             }
 
-            Console.WriteLine($"You have defeated the {chosenEnemy}!!!");
+            Console.WriteLine($"You have defeated the {randomEnemy}!!!");
 
         }
+        
     }
 }
