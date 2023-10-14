@@ -89,29 +89,51 @@ namespace gptgame
             // List of enemy types
 
 
-            List<string> enemyTypes = new List<string>() { "Trollip", "Skank", "Car Salesman", "Hoodlum", "Priest", "Chammy Sweep", "Proper Cunt", "Chicken Head", "Pimp" };
+            List<string> enemyTypes = new List<string>() 
+            { "Trollip", 
+                "Skank", 
+                "Car Salesman", 
+                "Hoodlum", 
+                "Priest", 
+                "Chammy Sweep", 
+                "Proper Cunt", 
+                "Chicken Head", 
+                "Pimp" 
+            };
+            List<string> introEnemy = new List<string>()
+            {
+                "What--something is amiss, careful lads...",
+                "The day is headed downhill!!",
+                "Shhhh...Listen!",
+                "What was that?"
+            };
 
-            // Create a random object
+            // Create a random enemy
             Random enemy = new Random();
+            //Create a random starting saying
+            Random intro = new Random();
 
             // Get random index from 0 to enemyTypes.Count - 1
             int randomIndex = enemy.Next(enemyTypes.Count);
+            int randomSaying = intro.Next(introEnemy.Count);
 
             // Choose a random enemy type
             string randomEnemy = enemyTypes[randomIndex];
+            string randomIntro = introEnemy[randomSaying];
 
 
 
             // User Story 2: Combat System
 
             // Acceptance Criteria 1: Initiate combat
+            Console.WriteLine($"{randomIntro}");
             Console.WriteLine($"You have encountered a {randomEnemy}!");
 
             int enemyHealth = 10;
             int playerHealth = enemyHealth + 2;
 
             // Acceptance Criteria 2 & 3: Take turns and use skills/items
-            while ( enemyHealth > 0 && playerHealth > 0 )
+            while ( enemyHealth > 0 || playerHealth > 0 )
             {
                 Console.WriteLine("\nIt's your turn! Choose your action: [Attack | Heal | Stats]");
                 string action = Console.ReadLine();
