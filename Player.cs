@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace gptgame
 {
-    internal class Player
+    public class Player
     {
         string chosenEnemy;
 
@@ -108,7 +108,7 @@ namespace gptgame
             Console.WriteLine($"You have encountered a {randomEnemy}!");
 
         }
-
+        //need to redo this section, something aint right.
         public static void EnemyEncounter()
         {
             
@@ -147,7 +147,7 @@ namespace gptgame
                 }
 
                 // Enemy turn
-                Console.WriteLine($"The {chosenEnemy} attacks you!");
+                Console.WriteLine($"The {Player.chosenEnemy} attacks you!");
                 // Implement player damage logic here
                 Random playerAttack = new Random();
                 int playerDamage = playerAttack.Next(5);
