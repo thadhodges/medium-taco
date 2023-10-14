@@ -126,7 +126,7 @@ namespace gptgame
                 // Player turn
                 if ( action.ToLower() == "attack" )
                 {
-                    Console.WriteLine(value: $"You attacked the {chosenEnemy}");
+                    Console.WriteLine($"You attacked the {SelectRandomEnemy}");
                     enemyHealth -= damage;
                 }
                 else if ( action.ToLower() == "heal" )
