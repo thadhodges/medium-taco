@@ -127,16 +127,28 @@ namespace gptgame
 
             // Acceptance Criteria 1: Initiate combat
             Console.WriteLine($"{randomIntro}");
+            Thread.Sleep(3000);
+            Console.WriteLine(".");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("..");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("..."); 
+            Thread.Sleep(500);
+            Console.Clear();
+
             Console.WriteLine($"You have encountered a {randomEnemy}!");
 
             int enemyHealth = 10;
             int playerHealth = enemyHealth + 2;
 
             // Acceptance Criteria 2 & 3: Take turns and use skills/items
-            while ( enemyHealth > 0 || playerHealth > 0 )
+            while ( enemyHealth > 0 && playerHealth > 0 )
             {
                 Console.WriteLine("\nIt's your turn! Choose your action: [Attack | Heal | Stats]");
                 string action = Console.ReadLine();
+                Console.Clear();
                 Random enemyAttack = new Random();
                 int damage = enemyAttack.Next(5);
 
@@ -163,21 +175,42 @@ namespace gptgame
                     Console.WriteLine("Invalid action. You lose your turn.");
                 }
 
+                Console.WriteLine(".");
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine("..");
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine("...");
+                Thread.Sleep(1000);
+                Console.Clear();
+
                 // Enemy turn
                 Console.WriteLine($"The {randomEnemy} attacks you!");
+
                 // Implement player damage logic here
                 Random playerAttack = new Random();
                 int playerDamage = playerAttack.Next(5);
                 playerHealth -= playerDamage;
-
+                //add pause
+                Thread.Sleep(2000);
 
                 // Display enemy health
                 Console.WriteLine($"Enemy Health: {enemyHealth}\n" +
                     $"Player Health: {playerHealth}");
+
+                //add pause
+                Thread.Sleep(2000);
             }
-
-            Console.WriteLine($"You have defeated the {randomEnemy}!!!");
-
+            if ( playerHealth < 0 )
+            {
+                Thread.Sleep(2000);
+                Console.WriteLine($"You have defeated the {randomEnemy}!!!");
+            }
+            else
+            {
+                Console.WriteLine($"You Have Been Defeated");
+            }
         }
         
     }
