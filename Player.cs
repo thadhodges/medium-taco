@@ -17,6 +17,8 @@ namespace gptgame
 
             Thread.Sleep(2000);
 
+            Console.Clear();
+
             Console.Write("Enter your character's name: ");
 
             Thread.Sleep(2000);
