@@ -86,6 +86,7 @@ namespace gptgame
                 $"Strength {strength}\n" +
                 $"Intelligence {intelligence}\n" +
                 $"Agility {agility}");
+            Thread.Sleep(3000);
 
 
         }
@@ -135,19 +136,25 @@ namespace gptgame
             // User Story 2: Combat System
 
             // Acceptance Criteria 1: Initiate combat
+            Console.WriteLine("You continue on your journey, when something grabs your attention...");
+            Thread.Sleep(2000);
+            Console.Clear();
             Console.WriteLine($"{randomIntro}");
             Thread.Sleep(3000);
-            Console.WriteLine(".");
+            Console.Clear();
+            Console.WriteLine("....");
             Thread.Sleep(500);
             Console.Clear();
-            Console.WriteLine("..");
+            Console.WriteLine("........");
             Thread.Sleep(500);
             Console.Clear();
-            Console.WriteLine("..."); 
+            Console.WriteLine("..........."); 
             Thread.Sleep(500);
             Console.Clear();
 
-            Console.WriteLine($"You have encountered a {randomEnemy}!");
+            Console.WriteLine($"You have encountered a {randomEnemy}!\n" +
+                $"Gather your whits and arm yourself!");
+            Thread.Sleep(3000);
 
             int enemyHealth = 10;
             int playerHealth = enemyHealth + 2;
@@ -157,6 +164,7 @@ namespace gptgame
             {
                 Console.WriteLine("\nIt's your turn! Choose your action: [Attack | Heal | Stats]");
                 string action = Console.ReadLine();
+                Thread.Sleep(3000);
                 Console.Clear();
                 Random enemyAttack = new Random();
                 int damage = enemyAttack.Next(5);
@@ -164,7 +172,9 @@ namespace gptgame
                 // Player turn
                 if ( action.ToLower() == "attack" )
                 {
+                    Thread.Sleep(2000);
                     Console.WriteLine($"You attacked the {randomEnemy}");
+                    Thread.Sleep(3000);
                     enemyHealth -= damage;
                 }
                 else if ( action.ToLower() == "heal" )
@@ -184,17 +194,18 @@ namespace gptgame
                     Console.WriteLine("Invalid action. You lose your turn.");
                 }
 
-                Console.WriteLine(".");
+                Console.WriteLine("......");
                 Thread.Sleep(1000);
                 Console.Clear();
-                Console.WriteLine("..");
+                Console.WriteLine("...........");
                 Thread.Sleep(1000);
                 Console.Clear();
-                Console.WriteLine("...");
+                Console.WriteLine("................");
                 Thread.Sleep(1000);
                 Console.Clear();
 
                 // Enemy turn
+                Thread.Sleep(3000);
                 Console.WriteLine($"The {randomEnemy} attacks you!");
 
                 // Implement player damage logic here
@@ -207,6 +218,7 @@ namespace gptgame
                 // Display enemy health
                 Console.WriteLine($"Enemy Health: {enemyHealth}\n" +
                     $"Player Health: {playerHealth}");
+                Console.Clear();
 
                 //add pause
                 Thread.Sleep(2000);
