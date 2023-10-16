@@ -27,6 +27,10 @@ namespace gptgame
 
             Thread.Sleep(2000);
 
+            Console.Clear();
+
+            Thread.Sleep(2000);
+
             Console.WriteLine($"Hello, {characterName}!");
 
 
@@ -78,7 +82,10 @@ namespace gptgame
             }
 
             Console.WriteLine($"You chose the {characterClass} class.");
-            Console.WriteLine($"Initial Stats: Strength {strength}, Intelligence {intelligence}, Agility {agility}");
+            Console.WriteLine($"Initial Stats: \n" +
+                $"Strength {strength}\n" +
+                $"Intelligence {intelligence}\n" +
+                $"Agility {agility}");
 
 
         }
