@@ -83,7 +83,8 @@ namespace gptgame
                 "We are about to die!!!!!"
             };
             int listIndex = startString.Next(startList.Count);
-            Console.WriteLine(startList[listIndex]);
+            string myString = startList[listIndex];
+            Console.WriteLine(myString);
 
 
         }

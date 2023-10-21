@@ -6,8 +6,6 @@ namespace gptgame
 {
     public class Player
     {
-        string chosenEnemy;
-
         public static void Introduction()
         {
 
