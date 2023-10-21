@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading;
 
 namespace gptgame
 {
@@ -10,7 +6,7 @@ namespace gptgame
     {
         static void Main( string[] args )
         {
-            
+
             Player.Introduction();
             //Player.SelectPlayer();
             //Player.SelectRandomEnemy();
@@ -21,7 +17,7 @@ namespace gptgame
             //Console.Clear();
             Battle.RandomStartString();
 
-           
+
 
 
 
@@ -31,7 +27,7 @@ namespace gptgame
 
             // Keep console open
             Console.ReadLine();
-            
+
         }
     }
 }
