@@ -69,6 +69,25 @@ namespace gptgame
 
         }
 
+        public static void RandomStartString()
+        {
+            Random startString = new Random();
+
+            List<string> startList = new List<string>
+            {
+                "What was that????",
+                "Shhh, I thought I heard something...",
+                "There is something out there....",
+                "Hold on, it's about to go down...",
+                "I hope it's not a car salesman...",
+                "We are about to die!!!!!"
+            };
+            int listIndex = startString.Next(startList.Count);
+            Console.WriteLine(startList[listIndex]);
+
+
+        }
+
 
 
     }

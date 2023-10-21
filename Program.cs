@@ -16,6 +16,8 @@ namespace gptgame
             Thread.Sleep( 1000 );
             Console.Clear();
             Battle.SequenceTwo();
+            Console.Clear();
+            Battle.RandomStartString(); 
 
 
 
