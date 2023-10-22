@@ -92,21 +92,21 @@ namespace gptgame
 
         public static void SelectRandomEnemy()
         {
-           
+
 
             // List of enemy types
 
 
-            List<string> enemyTypes = new List<string>() 
-            { "Trollip", 
-                "Skank", 
-                "Car Salesman", 
-                "Hoodlum", 
-                "Priest", 
-                "Chammy Sweep", 
-                "Proper Cunt", 
-                "Chicken Head", 
-                "Pimp" 
+            List<string> enemyTypes = new List<string>()
+            { "Trollip",
+                "Skank",
+                "Car Salesman",
+                "Hoodlum",
+                "Priest",
+                "Chammy Sweep",
+                "Proper Cunt",
+                "Chicken Head",
+                "Pimp"
             };
             List<string> introEnemy = new List<string>()
             {
@@ -146,7 +146,7 @@ namespace gptgame
             Console.WriteLine("........");
             Thread.Sleep(500);
             Console.Clear();
-            Console.WriteLine("..........."); 
+            Console.WriteLine("...........");
             Thread.Sleep(500);
             Console.Clear();
 
@@ -231,6 +231,72 @@ namespace gptgame
                 Console.WriteLine($"You Have Been Defeated");
             }
         }
-        
+
+        public string Name { get; set; }
+        public int Health { get; set; }
+        public int MaxHealth { get; set; }
+        public int AttackStrength { get; set; }
+        public int Defense { get; set; }
+        public int ExperiencePoints { get; private set; }
+        public int Level { get; private set; }
+
+        // Constructor to initialize the hero
+        //public Hero( string name,  )
+        //{
+        //    Name = name;
+        //    MaxHealth = 100; // Default value
+        //    Health = MaxHealth;
+        //    AttackStrength = 15; // Default value
+        //    Defense = 10; // Default value
+        //    ExperiencePoints = 0;
+        //    Level = 1;
+        //}
+
+        // Method for the hero to attack a target
+        public int Attack()
+        {
+            Console.WriteLine($"{Name} attacks with strength of {AttackStrength}!");
+            return AttackStrength;
+        }
+
+        // Method for the hero to take damage
+        public void TakeDamage( int damage )
+        {
+            int actualDamage = Math.Max(damage - Defense, 0); // Ensure damage is never negative
+            Health -= actualDamage;
+            Console.WriteLine($"{Name} takes {actualDamage} damage! Remaining health: {Health}");
+
+            if ( Health <= 0 )
+            {
+                Console.WriteLine($"{Name} has been defeated!");
+            }
+        }
+
+        // Method for the hero to gain experience
+        public void GainExperience( int exp )
+        {
+            ExperiencePoints += exp;
+            Console.WriteLine($"{Name} gains {exp} experience points!");
+
+            // Level up if the hero has enough experience (this is a simple level-up mechanism for the example)
+            if ( ExperiencePoints >= Level * 100 )
+            {
+                LevelUp();
+            }
+        }
+
+        // Level up method
+        private void LevelUp()
+        {
+            Level++;
+            MaxHealth += 20;  // Increase max health by 20 points for each level
+            Health = MaxHealth; // Restore full health upon leveling up
+            AttackStrength += 5; // Increase attack strength
+            Defense += 5; // Increase defense
+            ExperiencePoints = 0; // Reset experience points for the next level
+
+            Console.WriteLine($"{Name} has reached level {Level}!");
+
+        }
     }
 }

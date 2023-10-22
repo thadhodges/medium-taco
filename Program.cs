@@ -7,15 +7,18 @@ namespace gptgame
         static void Main( string[] args )
         {
 
-            Player.Introduction();
-            //Player.SelectPlayer();
-            //Player.SelectRandomEnemy();
-            //Battle.SequenceOne();
-            //Thread.Sleep( 1000 );
-            //Console.Clear();
-            //Battle.SequenceTwo();
-            //Console.Clear();
-            Battle.RandomStartString();
+            //Player.Introduction();
+            ////Player.SelectPlayer();
+            ////Player.SelectRandomEnemy();
+            ////Battle.SequenceOne();
+            ////Thread.Sleep( 1000 );
+            ////Console.Clear();
+            ////Battle.SequenceTwo();
+            ////Console.Clear();
+            //Battle.RandomStartString();
+
+            GamePlay.GameIntro();
+            GamePlay.GameExit();
 
 
 
@@ -23,10 +26,8 @@ namespace gptgame
 
 
 
-
-
-            // Keep console open
-            Console.ReadLine();
+            //// Keep console open
+            //Console.ReadLine();
 
         }
     }
