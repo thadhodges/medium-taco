@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace gptgame
 {
@@ -34,6 +35,10 @@ namespace gptgame
                  ##   ##  ##       ##   ##  ##       ##  ##     ##     ##  ##  
                  ##   ##  ######   ##   ##  ##       ##  ##    ####     ####   ");
 
+            Thread.Sleep(3000);
+            Console.Clear();
+            
+
             Console.ReadKey();
 
 
@@ -47,11 +52,18 @@ namespace gptgame
 
         public static void GameExit()
         {
+            Console.Clear();
             Console.WriteLine(@" ##           # #                                                    #                           #  
 #   ### ### ### ### # # ###         ### ### ### ###      ## ###  ##     ##       ## ### ### ##   #  
 # # # # # # # # # # ### ##          #   # # ### ##      # # # # # #  #  # #      #  # # # # # #  #  
 # # ### ### ### ###   # ###  #      ### ### # # ###     ###  ## ###  ## # #     ##  ### ### # #     
  ##                 ###     #                               ###                                  # ");
+
+            Console.Clear();
+
+            Thread.Sleep(1000);
+            
+            Console.WriteLine("Press any key to exit the game!");
 
             Console.ReadKey();
         }
